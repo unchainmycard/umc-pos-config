@@ -1,0 +1,1 @@
+# umc-pos-config
