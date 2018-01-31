@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: umc-pos-ping-service
+
+server:
+  port: 26025
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
