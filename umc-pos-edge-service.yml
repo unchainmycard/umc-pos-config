@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: umc-pos-edge-service
+
+server:
+  port: 8765
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    umc-pos-discovery-service:
+      path: /umc-pos-discovery-service/**
+      sensitive-headers: SetCookie,Authorization
+      url: http://localhost:8888
+
+histrix:
+  command:
+    umc-pos-discovery-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+
+      
