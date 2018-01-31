@@ -22,10 +22,19 @@ zuul:
       path: /umc-pos-discovery-service/**
       sensitive-headers: SetCookie,Authorization
       url: http://localhost:8761
+    umc-pos-ping-service:
+      path: /ping/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-ping-service
 
 histrix:
   command:
     umc-pos-discovery-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+    umc-pos-ping-service:
       execution:
         isolation:
           thread:
