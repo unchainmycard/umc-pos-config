@@ -26,6 +26,10 @@ zuul:
       path: /ping/**
       sensitive-headers: SetCookie,Authorization
       serviceId: umc-pos-ping-service
+    umc-pos-customer-service:
+      path: /customers/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-customer-service
 
 histrix:
   command:

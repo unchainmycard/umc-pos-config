@@ -3,7 +3,7 @@ spring:
     name: umc-pos-ping-service
 
 server:
-  port: 26025
+  port: 26099
 
 eureka:
   instance:
