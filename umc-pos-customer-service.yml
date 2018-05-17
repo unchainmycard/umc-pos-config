@@ -9,6 +9,7 @@ spring:
     date-format: "YYYY-MM-dd"
     serialization:
       write_dates_as_timestamps: true
+    default-property-inclusion: NON_NULL
 
 server:
   port: 26021
