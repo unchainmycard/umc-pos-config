@@ -30,6 +30,10 @@ zuul:
       path: /customers/**
       sensitive-headers: SetCookie,Authorization
       serviceId: umc-pos-customer-service
+    umc-pos-store-service:
+      path: /stores/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-store-service
 
 histrix:
   command:
