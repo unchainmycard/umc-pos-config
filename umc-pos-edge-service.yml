@@ -36,7 +36,7 @@ zuul:
       serviceId: umc-pos-store-service
     umc-pos-user-service:
       path: /users/**
-      sensitiveHeaders: SetCookie,Authorization
+      sensitive-headers: Cookie,Set-Cookie
       serviceId: umc-pos-user-service
 
 histrix:
