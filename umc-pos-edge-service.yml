@@ -38,10 +38,6 @@ zuul:
       path: /users/**
       sensitive-headers: Cookie,Set-Cookie
       serviceId: umc-pos-user-service
-  security:
-    oauth2:
-      resource:
-        userInfoUri: http://${DOCKER_IP:127.0.0.1}:26023/uaa/user
 
 histrix:
   command:
