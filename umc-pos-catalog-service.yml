@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: umc-pos-catalog-service
+  data:
+    mongodb:
+      host: ${MONGO_SERVER_IP:127.0.0.1}
+      port: ${MONGO_SERVER_PORT:27017}
+  jackson:
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: true
+    default-property-inclusion: NON_NULL
+
+server:
+  port: 26024
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
