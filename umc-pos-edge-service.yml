@@ -38,6 +38,10 @@ zuul:
       path: /users/**
       sensitive-headers: Cookie,Set-Cookie
       serviceId: umc-pos-user-service
+    umc-pos-catalog-service:
+      path: /catalog/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-catalog-service
   security:
     oauth2:
       resource:
