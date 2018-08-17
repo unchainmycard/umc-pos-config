@@ -24,4 +24,4 @@ eureka:
 umc:
   tasks:
     updateCategoryPath:
-      cron: "0/30 * * * * ?"
+      cron: "0 0/5 * * * ?"
