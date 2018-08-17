@@ -20,3 +20,8 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
+
+umc:
+  tasks:
+    updateCategoryPath:
+      cron: "0/30 * * * * ?"
