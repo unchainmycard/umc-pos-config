@@ -5,6 +5,7 @@ spring:
     mongodb:
       host: ${MONGO_SERVER_IP:127.0.0.1}
       port: ${MONGO_SERVER_PORT:27017}
+      database: umc_pos_db
   jackson:
     date-format: "YYYY-MM-dd"
     serialization:
