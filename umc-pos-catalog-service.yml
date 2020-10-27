@@ -21,7 +21,19 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
 
+feign:
+  category:
+    service: umc-pos-catalog-service
+    url: "/api/v1"
+  client:
+    config:
+      umc-pos-catalog-service:
+        connectTimeout: 5000
+        readTimeout: 5000
+
 umc:
   tasks:
     updateCategoryPath:
+      cron: "0 0/5 * * * ?"
+    updateItemCategory:
       cron: "0 0/5 * * * ?"
