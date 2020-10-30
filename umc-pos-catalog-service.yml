@@ -28,7 +28,7 @@ feign:
     url: "http://192.168.1.65:8765/catalog/api/v1"
   client:
     config:
-      category:
+      umc-pos-catalog-service:
         connectTimeout: 5000
         readTimeout: 5000
 
