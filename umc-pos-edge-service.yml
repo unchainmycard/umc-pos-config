@@ -50,6 +50,10 @@ zuul:
       path: /sales/**
       sensitive-headers: SetCookie,Authorization
       serviceId: umc-pos-sale-service
+    umc-pos-price-service:
+      path: /prices/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-price-service
   security:
     oauth2:
       resource:
