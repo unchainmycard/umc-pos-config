@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: umc-pos-hierarchy-service
+  data:
+    mongodb:
+      host: ${MONGO_SERVER_IP:127.0.0.1}
+      port: ${MONGO_SERVER_PORT:27017}
+      database: umc_pos_db
+      auto-index-creation: true
+  jackson:
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: true
+    default-property-inclusion: NON_NULL
+
+server:
+  port: 26123
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
