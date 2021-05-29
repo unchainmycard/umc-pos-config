@@ -54,6 +54,10 @@ zuul:
       path: /prices/**
       sensitive-headers: SetCookie,Authorization
       serviceId: umc-pos-price-service
+    umc-pos-hierarchy-service:
+      path: /hierarchy/**
+      sensitive-headers: SetCookie,Authorization
+      serviceId: umc-pos-hierarchy-service
   security:
     oauth2:
       resource:
