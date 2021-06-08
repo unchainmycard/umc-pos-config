@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: umc-pos-bootstrap-service
+
+server:
+  port: 26999
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
