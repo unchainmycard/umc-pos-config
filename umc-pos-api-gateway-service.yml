@@ -7,7 +7,7 @@ spring:
         - id: bootstrap
           uri: lb://umc-pos-bootstrap-service
           predicates:
-            - Path=/bootstrap/**
+            - Path=/api/v1/bootstrap/**
 
 server:
   port: 8080
