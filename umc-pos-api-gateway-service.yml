@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: umc-pos-api-gateway-service
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
+    org.springframework.cloud.gateway: TRACE
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bootstrap-service
+        uri: lb://umc-pos-bootstrap-service
+        predicates:
+          - Path=/bootstrap/**
+
+
+      
