@@ -17,7 +17,14 @@ logging:
     root: INFO
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
     org.springframework.cloud.gateway: TRACE
-  
 
+spring:  
+  cloud:
+    gateway:
+      routes:
+        - id: bootstrap-service
+        uri: lb://umc-pos-bootstrap-service
+        predicates:
+          - Path=/bootstrap/**
 
       
