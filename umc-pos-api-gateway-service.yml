@@ -5,13 +5,6 @@ spring:
 server:
   port: 8080
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-
 logging:
   level:
     root: INFO
