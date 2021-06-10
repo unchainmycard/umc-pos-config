@@ -1,6 +1,13 @@
 spring:
   application:
     name: umc-pos-api-gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: bootstrap
+          uri: lb://umc-pos-bootstrap-service
+          predicates:
+            - Path=/bootstrap/**
 
 server:
   port: 8080
