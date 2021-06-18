@@ -13,14 +13,8 @@ spring:
       write_dates_as_timestamps: true
     default-property-inclusion: NON_NULL
 
-jwt:
-  secret: jeanvaljean
-  expiration: 600   # 10 minutes
-  authHeader: Authorization
-  authCookie: AUTH-TOKEN
-
 server:
-  port: 26023
+  port: 26002
 
 eureka:
   instance:
