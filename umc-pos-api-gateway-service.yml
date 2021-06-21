@@ -16,6 +16,14 @@ spring:
           uri: lb://umc-pos-user-service
           predicates:
             - Path=/api/v1/user/**
+        - id: role
+          uri: lb://umc-pos-user-service
+          predicates:
+            - Path=/api/v1/role/**
+        - id: accessControlList
+          uri: lb://umc-pos-user-service
+          predicates:
+            - Path=/api/v1/acl/**
 
 server:
   port: 8080
