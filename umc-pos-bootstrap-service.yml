@@ -16,7 +16,7 @@ spring:
 
 jwt:
   secret: jeanvaljean
-  
+
 server:
   port: 26999
 
