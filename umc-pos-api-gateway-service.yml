@@ -8,6 +8,7 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
+            allowedHeaders: "*"
       routes:
         - id: bootstrap
           uri: lb://umc-pos-bootstrap-service
