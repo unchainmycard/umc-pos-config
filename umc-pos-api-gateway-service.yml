@@ -3,6 +3,11 @@ spring:
     name: umc-pos-api-gateway-service
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
       routes:
         - id: bootstrap
           uri: lb://umc-pos-bootstrap-service
