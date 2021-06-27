@@ -3,6 +3,8 @@ spring:
     name: umc-pos-api-gateway-service
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
       globalcors:
         corsConfigurations:
           '[/**]':
