@@ -34,15 +34,15 @@ spring:
         - id: site
           uri: lb://umc-pos-business-unit-service
           predicates:
-            - Path=/api/v1/site/**
+            - Path=/businessunit/api/v1/site/**
         - id: retailer
           uri: lb://umc-pos-business-unit-service
           predicates:
-            - Path=/api/v1/retailer/**
+            - Path=/businessunit/api/v1/retailer/**
         - id: business-unit-group
           uri: lb://umc-pos-business-unit-service
           predicates:
-            - Path=/api/v1/group/**
+            - Path=/businessunit/api/v1/group/**
 
 server:
   port: 8080
