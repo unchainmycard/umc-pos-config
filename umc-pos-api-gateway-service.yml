@@ -31,18 +31,10 @@ spring:
           uri: lb://umc-pos-user-service
           predicates:
             - Path=/api/v1/acl/**
-        - id: site
+        - id: business-unit-service
           uri: lb://umc-pos-business-unit-service
           predicates:
-            - Path=/api/v1/site/**
-        - id: retailer
-          uri: lb://umc-pos-business-unit-service
-          predicates:
-            - Path=/api/v1/retailer/**
-        - id: business-unit-group
-          uri: lb://umc-pos-business-unit-service
-          predicates:
-            - Path=/business-unit/api/v1/group/**
+            - Path=/business-unit/api/v1/**
           filters:
             - RewritePath=/business-unit/(?<path>.*), /$\{path}
 
