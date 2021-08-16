@@ -14,8 +14,11 @@ spring:
       write_dates_as_timestamps: true
     default-property-inclusion: NON_NULL
 
+jwt:
+  secret: jeanvaljean
+
 server:
-  port: 26021
+  port: 26004
 
 eureka:
   instance:
