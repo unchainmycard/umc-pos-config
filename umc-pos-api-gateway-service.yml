@@ -33,6 +33,12 @@ spring:
             - Path=/business-unit/api/v1/**
           filters:
             - RewritePath=/business-unit/(?<path>.*), /$\{path}
+        - id: customer-service
+          uri: lb://umc-pos-customer-service
+          predicates:
+            - Path=/customer/api/v1/**
+          filters:
+            - RewritePath=/customer/(?<path>.*), /$\{path}
 
 server:
   port: 8080
