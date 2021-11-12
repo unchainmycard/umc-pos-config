@@ -45,6 +45,12 @@ spring:
             - Path=/catalog/api/v1/**
           filters:
             - RewritePath=/catalog/(?<path>.*), /$\{path}
+        - id: workstation-service
+          uri: lb://umc-pos-workstation-service
+          predicates:
+            - Path=/workstation/api/v1/**
+          filters:
+            - RewritePath=/workstation/(?<path>.*), /$\{path}
 
 server:
   port: 8080
