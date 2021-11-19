@@ -51,6 +51,12 @@ spring:
             - Path=/workstation/api/v1/**
           filters:
             - RewritePath=/workstation/(?<path>.*), /$\{path}
+        - id: workstation-composite-service
+          uri: lb://umc-pos-workstation-composite-service
+          predicates:
+            - Path=/workstation-composite/api/v1/**
+          filters:
+            - RewritePath=/workstation-composite/(?<path>.*), /$\{path}
 
 server:
   port: 8080
