@@ -39,6 +39,8 @@ spring.cloud.stream:
     autoBindDlq: true
     republishToDlq: true
 
+logging.level.org.springframework.amqp=DEBUG
+
 jwt:
   secret: jeanvaljean
 

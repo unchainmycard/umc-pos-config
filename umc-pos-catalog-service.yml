@@ -27,7 +27,9 @@ spring.cloud.stream:
   bindings:
     itemEvent-out-0:
       destination: umc-pos.item.events
-      group: umc-pos.item-group
+      #group: umc-pos.item-group
+
+logging.level.org.springframework.amqp=DEBUG
 
 jwt:
   secret: jeanvaljean
