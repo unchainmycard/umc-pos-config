@@ -44,8 +44,9 @@ eureka:
 
 logging:
   level:
+    root: INFO
     org.springframework:
-      amqp: DEBUG
+      amqp: INFO
 
 #feign:
 #  category:
