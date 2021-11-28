@@ -23,6 +23,8 @@ spring.cloud.stream:
   default:
     binder: rabbit
     contentType: application/json
+  function:
+    definition: itemConsumer
   bindings:
     # Use the consumer function name as input to create destination and group
     itemConsumer-in-0:
