@@ -55,5 +55,5 @@ eureka:
 logging:
   level:
     org.springframework:
-      amqp:DEBUG
+      amqp: DEBUG
 
