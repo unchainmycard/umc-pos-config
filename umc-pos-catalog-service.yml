@@ -29,8 +29,6 @@ spring.cloud.stream:
       destination: umc-pos.item.events
       #group: umc-pos.item-group
 
-logging.level.org.springframework.amqp=DEBUG
-
 jwt:
   secret: jeanvaljean
 
@@ -43,6 +41,11 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
+
+logging:
+  level:
+    org.springframework:
+      amqp:DEBUG
 
 #feign:
 #  category:
