@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: umc-pos-location-service
+  data:
+    mongodb:
+      host: ${MONGO_SERVER_IP:127.0.0.1}
+      port: ${MONGO_SERVER_PORT:27017}
+      database: umc_pos_db
+  jackson:
+    date-format: "YYYY-MM-dd"
+    time-zone: Europe/Paris
+    locale: fr_FR
+    serialization:
+      write_dates_as_timestamps: true
+    default-property-inclusion: NON_NULL
+
+spring.rabbitmq:
+  host: ${RABBITMQ_SERVER_IP:127.0.0.1}
+  port: ${RABBITMQ_SERVER_PORT:5672}
+  username: guest
+  password: guest
+
+spring.cloud.stream:
+  default:
+    binder: rabbit
+    contentType: application/json
+  # Declare the consumer function name
+  function:
+    definition: siteConsumer
+  bindings:
+    # Use the consumer function name as input to create destination and group
+    siteConsumer-in-0:
+      destination: umc-pos.location.events
+      group: umc-pos.location-group
+  # Consumer input binding parameters
+  bindings.siteConsumer-in-0.consumer:
+    maxAttempts: 3
+    backOffInitialInterval: 500
+    backOffMaxInterval: 1000
+    backOffMultiplier: 2.0
+  # RabbitMQ consumer input binding parameters
+  rabbit.bindings.siteConsumer-in-0.consumer:
+    autoBindDlq: true
+    republishToDlq: true
+
+jwt:
+  secret: jeanvaljean
+
+server:
+  port: 26009
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework:
+      amqp: INFO
