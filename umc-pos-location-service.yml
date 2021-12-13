@@ -30,8 +30,8 @@ spring.cloud.stream:
   bindings:
     # Use the consumer function name as input to create destination and group
     siteConsumer-in-0:
-      destination: umc-pos.location.events
-      group: umc-pos.location-group
+      destination: umc-pos.site.events
+      group: umc-pos.site-group
   # Consumer input binding parameters
   bindings.siteConsumer-in-0.consumer:
     maxAttempts: 3
