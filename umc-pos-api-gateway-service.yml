@@ -45,6 +45,12 @@ spring:
             - Path=/catalog/api/v1/**
           filters:
             - RewritePath=/catalog/(?<path>.*), /$\{path}
+        - id: location-service
+          uri: lb://umc-pos-location-service
+          predicates:
+            - Path=/location/api/v1/**
+          filters:
+            - RewritePath=/location/(?<path>.*), /$\{path}
         - id: workstation-service
           uri: lb://umc-pos-workstation-service
           predicates:
