@@ -30,6 +30,6 @@ eureka:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
     org.springframework:
       amqp: INFO
