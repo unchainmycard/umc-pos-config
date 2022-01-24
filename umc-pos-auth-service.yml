@@ -27,3 +27,9 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
+
+logging:
+  level:
+    root: ERROR
+    org.springframework:
+      amqp: INFO
