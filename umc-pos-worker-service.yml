@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: umc-pos-worker-service
+  data:
+    mongodb:
+      host: ${MONGO_SERVER_IP:127.0.0.1}
+      port: ${MONGO_SERVER_PORT:27017}
+      database: worker
+  jackson:
+    date-format: "YYYY-MM-dd"
+    time-zone: Europe/Paris
+    locale: fr_FR
+    serialization:
+      write_dates_as_timestamps: true
+    default-property-inclusion: NON_NULL
+
+spring.rabbitmq:
+  host: ${RABBITMQ_SERVER_IP:127.0.0.1}
+  port: ${RABBITMQ_SERVER_PORT:5672}
+  username: guest
+  password: guest
+
+spring.cloud.stream:
+  default:
+    binder: rabbit
+    contentType: application/json
+  bindings:
+    workerEvent-out-0:
+      destination: umc-pos.worker.events
+
+jwt:
+  secret: jeanvaljean
+
+server:
+  port: 26010
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework:
+      amqp: INFO

@@ -63,6 +63,12 @@ spring:
             - Path=/price/api/v1/**
           filters:
             - RewritePath=/price/(?<path>.*), /$\{path}
+        - id: worker-service
+          uri: lb://umc-pos-worker-service
+          predicates:
+            - Path=/worker/api/v1/**
+          filters:
+            - RewritePath=/worker/(?<path>.*), /$\{path}
         - id: workstation-composite-service
           uri: lb://umc-pos-workstation-composite-service
           predicates:
